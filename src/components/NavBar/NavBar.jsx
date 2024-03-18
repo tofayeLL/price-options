@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Link from "../Link/Link";
+import { RiMenu2Fill } from "react-icons/ri";
+import { AiFillCloseSquare } from "react-icons/ai";
 
 
 const NavBar = () => {
-
+      const [open, setOpen] = useState(false);
 
     const routesData = [
         { id: 1, path: "/", name: "Home" },
@@ -17,7 +20,15 @@ const NavBar = () => {
 
     return (
         <nav>
-           <ul className="flex justify-between">
+            <div onClick={() => setOpen(!open)} className="text-2xl md:hidden">
+                {
+                    open === true ? <AiFillCloseSquare></AiFillCloseSquare> :  <RiMenu2Fill ></RiMenu2Fill>
+
+                }
+            
+
+            </div>
+           <ul className="md:flex justify-between">
 
              {
                 routesData.map(route => <Link key={route.id} route={route}></Link>)
