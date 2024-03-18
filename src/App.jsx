@@ -10,13 +10,22 @@ function App() {
 
   return (
     <>
-    <NavBar></NavBar>
-   <PriceOptions></PriceOptions>
-   
-      <h1 className='text-5xl bg-red-300'>Vite + React</h1>
- 
-      
-      
+     <div className='container mx-auto px-14'>
+
+
+     <NavBar></NavBar>
+      <PriceOptions></PriceOptions>
+
+
+
+
+
+     </div>
+
+
+
+
+
     </>
   )
 }

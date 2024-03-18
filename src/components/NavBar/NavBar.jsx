@@ -19,7 +19,7 @@ const NavBar = () => {
 
 
     return (
-        <nav className="p-6">
+        <nav className="my-10 rounded-lg">
             <div onClick={() => setOpen(!open)} className="text-2xl md:hidden ">
                 {
                     open === true ? <GrClose></GrClose> :  <RiMenu2Fill ></RiMenu2Fill>
