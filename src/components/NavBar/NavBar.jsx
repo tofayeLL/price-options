@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "../Link/Link";
 import { RiMenu2Fill } from "react-icons/ri";
-import { AiFillCloseSquare } from "react-icons/ai";
+import { GrClose } from "react-icons/gr";
 
 
 const NavBar = () => {
@@ -19,16 +19,18 @@ const NavBar = () => {
 
 
     return (
-        <nav>
-            <div onClick={() => setOpen(!open)} className="text-2xl md:hidden">
+        <nav className="p-6">
+            <div onClick={() => setOpen(!open)} className="text-2xl md:hidden ">
                 {
-                    open === true ? <AiFillCloseSquare></AiFillCloseSquare> :  <RiMenu2Fill ></RiMenu2Fill>
+                    open === true ? <GrClose></GrClose> :  <RiMenu2Fill ></RiMenu2Fill>
 
                 }
             
 
             </div>
-           <ul className="md:flex justify-between">
+           <ul className={`md:flex justify-around  duration-1000
+           ${open ? 'top-12' : '-top-60'}
+           absolute md:static bg-yellow-300  p-6 ml-2 md:ml-0`}>
 
              {
                 routesData.map(route => <Link key={route.id} route={route}></Link>)
