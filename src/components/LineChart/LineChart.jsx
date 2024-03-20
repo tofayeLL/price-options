@@ -16,10 +16,6 @@ const LineChart = () => {
       ];
 
       
-
-
-
-
     return (
         <div>
             <Lchart height={500} width={500} data={mathMarksData}>
